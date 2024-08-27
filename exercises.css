@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Quicksand",sans-serif;
+    background: #1c1c1c;
+    color: #fff;
+}
+
+section{
+    min-height: 100vh;
+    padding-bottom: 20px;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+}
+
+.title{
+    font-size: 3rem;
+    margin: 2rem 0rem;
+}
+
+.exercises{
+    width: 100%;
+    max-width: 700px;
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #fff;
+    cursor: pointer;
+}
+
+.question{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.question h3{
+    font-size: 1.8rem;
+}
+
+.answer{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1.4s ease;
+}
+
+.answer ul{
+    padding-top: 1rem;
+    line-height: 1.6;
+    font-size: 1.4rem;
+}
+
+.exercises.active .answer{
+   max-height: 300px; 
+   animation: fade 1s ease-in-out;
+}
+
+
+.exercises.active svg{
+    transform: rotate(180deg);
+}
+
+svg{
+    transition: transform 0.5s ease-in;
+}
+
+
+@keyframes fade{
+    from{
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px) ;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .question h3 {
+        font-size: 1em; /* Smaller font size for question headings */
+    }
+
+    .answer p {
+        font-size: 0.9em; /* Smaller font size for paragraph text */
+    }
+
+    .answer ul {
+        padding-top: 0.6rem;
+        line-height: 1.6;
+        font-size: 0.8em; /* Smaller font size for list items */
+    }
+
+    .title{
+        margin: 1rem 0rem;
+    }
+}
